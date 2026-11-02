@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A precise, playful pattern lab for children ages 3–4.">
+  <title>Pattern Lab — Play with shapes</title>
+  <link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+  <header class="site-header">
+    <button class="back hidden" id="backButton" aria-label="Back to all experiments">←</button>
+    <a class="wordmark" id="homeLink" href="#" aria-label="Pattern Lab home">
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span>Pattern Lab</span><sup>01</sup>
+    </a>
+    <div class="header-tools">
+      <a class="research-link" id="researchLink" href="#evidence">Research</a>
+      <span class="stars" aria-label="Stars collected"><b id="totalStars">0</b> ★</span>
+      <button class="sound" id="soundButton" aria-pressed="true" aria-label="Turn sound off">Sound on</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="home" id="homeScreen">
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="index">A visual thinking experiment for ages 3–4</span>
+          <h1>Look closely.<br>Find the <span>pattern.</span></h1>
+          <p>Five short experiments for patterning, spatial thinking and flexible attention.</p>
+          <button class="cta" data-start="match">Start experimenting <span>↗</span></button>
+        </div>
+        <div class="hero-collage" aria-label="Interactive tessellation motion study">
+          <canvas id="rippleCanvas" class="ripple-canvas" role="img" aria-label="A field of repeated geometric creatures. Tap anywhere to send a distance-driven ripple through the pattern."></canvas>
+          <div class="motion-caption" aria-hidden="true"><span>Motion study 01</span><strong>Tap the field</strong><small>distance → delay → turn</small></div>
+          <img class="hero-main" src="assets/pattern-lab-hero-v2.png" alt="Original Pattern Lab animals and landscapes constructed from geometric paper pieces">
+          <div class="hero-tile tile-blue"><span></span></div>
+          <div class="hero-tile tile-red"><span></span></div>
+          <p>Translate / rotate<br>Tap / observe</p>
+        </div>
+      </section>
+
+      <section class="experiments" aria-labelledby="experimentsTitle">
+        <div class="section-intro">
+          <span class="index">Choose an experiment</span>
+          <h2 id="experimentsTitle">Five ways to think with shapes.</h2>
+        </div>
+        <div class="experiment-list">
+          <button class="experiment-card" data-start="match">
+            <span class="experiment-id">01 / MATCH</span>
+            <span class="experiment-visual match-visual" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <span class="experiment-copy"><strong>Find the exact fit</strong><small>Compare shape, color and direction.</small></span>
+            <span class="arrow">↗</span>
+          </button>
+          <button class="experiment-card" data-start="pattern">
+            <span class="experiment-id">02 / SEQUENCE</span>
+            <span class="experiment-visual sequence-visual" aria-hidden="true"><i></i><i></i><i></i><i>?</i></span>
+            <span class="experiment-copy"><strong>What comes next?</strong><small>Notice and continue a repeating rule.</small></span>
+            <span class="arrow">↗</span>
+          </button>
+          <button class="experiment-card" data-start="build">
+            <span class="experiment-id">03 / COMPOSE</span>
+            <span class="experiment-visual build-visual" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            <span class="experiment-copy"><strong>Build a little fish</strong><small>Combine parts into one whole.</small></span>
+            <span class="arrow">↗</span>
+          </button>
+          <button class="experiment-card" data-start="rotate">
+            <span class="experiment-id">04 / ROTATE</span>
+            <span class="experiment-visual rotate-visual" aria-hidden="true"><i></i><i>↻</i><i></i></span>
+            <span class="experiment-copy"><strong>Turn it in your mind</strong><small>Recognize a shape after it rotates.</small></span>
+            <span class="arrow">↗</span>
+          </button>
+          <button class="experiment-card" data-start="switch">
+            <span class="experiment-id">05 / SWITCH</span>
+            <span class="experiment-visual switch-visual" aria-hidden="true"><i></i><i></i><b>COLOR</b><b>SHAPE</b></span>
+            <span class="experiment-copy"><strong>Switch the rule</strong><small>Sort by color, then think by shape.</small></span>
+            <span class="arrow">↗</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="reference-gallery" aria-labelledby="referenceTitle">
+        <div class="section-intro">
+          <span class="index">Visual source material</span>
+          <h2 id="referenceTitle">Patterns found in art and nature.</h2>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-wide"><img class="motion-field" src="assets/pattern-lab-field-v2.png" alt="Original interlocking bird and fish pattern created for Pattern Lab"><figcaption><b>01</b> Repeat</figcaption></figure>
+          <figure><img class="motion-micro" src="assets/pattern-lab-micro-v2.png" alt="Original biomimetic paper-tile spiral created for Pattern Lab"><figcaption><b>02</b> Nature</figcaption></figure>
+          <figure><img class="motion-hero" src="assets/pattern-lab-hero-v2.png" alt="Original geometric animal composition created for Pattern Lab"><figcaption><b>03</b> Compose</figcaption></figure>
+          <figure class="gallery-tall"><img class="motion-field-alt" src="assets/pattern-lab-field-v2.png" alt="Original colorful tessellation field created for Pattern Lab"><figcaption><b>04</b> Rotate</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="evidence" id="evidence" aria-labelledby="evidenceTitle">
+        <div class="evidence-head">
+          <span class="index">Research translation / v1.0</span>
+          <h2 id="evidenceTitle">What the science supports.</h2>
+          <p>These games practice skills used in published child-development research. The site itself has not been clinically validated and cannot guarantee cognitive improvement.</p>
+        </div>
+        <div class="evidence-grid">
+          <article><span>01</span><h3>Exact comparison</h3><p>Guided play keeps children active while an adult can label visible features: shape, color and direction.</p><a href="https://publications.aap.org/pediatrics/article/142/3/e20182058/37364/The-Power-of-Play-A-Pediatric-Role-in-Enhancing" target="_blank" rel="noopener">AAP clinical report ↗</a></article>
+          <article><span>02</span><h3>Repeating patterns</h3><p>Research with 4-year-olds maps how children notice and extend a repeating unit such as AB or AAB.</p><a href="https://eric.ed.gov/?id=EJ1024460" target="_blank" rel="noopener">Rittle-Johnson et al. ↗</a></article>
+          <article><span>03</span><h3>Spatial assembly</h3><p>Spatial assembly was studied directly in 3-year-olds and was associated with concurrent early mathematics.</p><a href="https://doi.org/10.1111/cdev.12165" target="_blank" rel="noopener">Verdine et al. ↗</a></article>
+          <article><span>04</span><h3>Mental rotation</h3><p>Touch-screen studies show this ability is still emerging from about 3½ years, so the game uses simple shapes, low visual load and no timer.</p><a href="https://pubmed.ncbi.nlm.nih.gov/23306783/" target="_blank" rel="noopener">Frick et al. ↗</a></article>
+          <article><span>05</span><h3>Cognitive flexibility</h3><p>The color-then-shape switch adapts the Dimensional Change Card Sort, a classic preschool executive-function task.</p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1474810/" target="_blank" rel="noopener">Kloo & Perner ↗</a></article>
+          <article class="evidence-wide"><span>+</span><h3>Why puzzles?</h3><p>Observed puzzle play between ages 2 and 4 predicted later spatial-transformation performance. A randomized study also found that five weeks of either digital or concrete spatial-assembly practice improved trained spatial performance in 3-year-olds versus a control group.</p><div><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3289766/" target="_blank" rel="noopener">Levine et al. ↗</a><a href="https://pubmed.ncbi.nlm.nih.gov/34235822/" target="_blank" rel="noopener">Schmitt et al. ↗</a></div></article>
+        </div>
+      </section>
+
+      <section class="grownups">
+        <span class="index">For grown-ups</span>
+        <p>Play together for a few minutes. Ask: <em>“Which way is it pointing?”</em> <em>“What repeats?”</em> or <em>“What is the rule now?”</em> Careful looking and trying matter more than speed.</p>
+      </section>
+    </section>
+
+    <section class="game hidden" id="gameScreen" aria-live="polite">
+      <div class="game-meta"><span id="gameNumber">Experiment 01</span><span id="roundLabel">Round 1 / 5</span></div>
+      <div class="progress" aria-label="Round progress"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="game-heading">
+        <div><span class="index" id="gameType">Match</span><h2 id="gameTitle">Find the exact fit.</h2></div>
+        <p id="gameInstruction">Choose the piece that is exactly the same.</p>
+      </div>
+      <div class="game-stage" id="gameStage"></div>
+      <div class="feedback hidden" id="feedback" role="status">
+        <span class="feedback-symbol" aria-hidden="true">✓</span>
+        <span class="index">Observation confirmed</span>
+        <h3 id="feedbackTitle">Exact match.</h3>
+        <p id="feedbackText">Same shape, same color, same direction.</p>
+        <button class="cta dark" id="nextButton">Next round <span>→</span></button>
+      </div>
+    </section>
+
+    <section class="finish hidden" id="finishScreen">
+      <div class="finish-image"><img src="assets/pattern-lab-field-v2.png" alt="Original Pattern Lab tessellation field"></div>
+      <div class="finish-copy">
+        <span class="index">Experiment complete</span><h2>Five careful<br>observations.</h2>
+        <div class="finish-stars" aria-label="Five stars earned">★★★★★</div>
+        <p>You compared details, found a rule and tested your idea.</p>
+        <button class="cta dark" id="chooseButton">Choose another <span>↗</span></button>
+        <button class="restart" id="restartButton">Repeat this experiment</button>
+      </div>
+    </section>
+  </main>
+  <footer><span>Pattern Lab / 2026</span><span>Designed for shared play</span></footer>
+  <script src="app.js?v=5"></script>
+</body>
+</html>
